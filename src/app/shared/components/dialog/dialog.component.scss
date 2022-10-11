@@ -1,0 +1,14 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+img {
+    width: 200px;
+}
+
+mat-dialog-actions > button {
+    margin: 0 10px;
+}

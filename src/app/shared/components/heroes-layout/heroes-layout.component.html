@@ -1,0 +1,5 @@
+<app-card
+  *ngFor="let card of cards"
+  [card]="card"
+  (click)="openDialog(card)"
+></app-card>

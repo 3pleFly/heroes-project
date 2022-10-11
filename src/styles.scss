@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;800&display=swap');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+@mixin minmq($size)  {
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+@mixin maxmq($size)  {
+    @media only screen and (max-width: $size) {
+        @content;
+    }
+}
+@mixin uppercase {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Noto Sans';
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
