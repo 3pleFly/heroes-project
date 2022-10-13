@@ -1,1 +1,3 @@
 <router-outlet></router-outlet>
+<div class="notification" *ngIf="this.notification">{{ this.notification }}</div>
+<div class="error notification" *ngIf="this.errorMessage">{{ this.errorMessage }}</div>

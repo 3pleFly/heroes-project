@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "email": "saber@gmail",
+      "password": "$2a$10$okqzVTVHIBTZKDgDhAMmhOVlE0QEu5EBGVxATRccsOfTj6MmPgdlK",
+      "id": 1
+    },
+    {
+      "email": "saber@gmail.com",
+      "password": "$2a$10$4vBa.YyyNTXYa9VW3kl57u8U/2wh6zAH/mjnM.w0a50R7JZ81xwzu",
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "ability": "Attacker",
+      "imgSrc": "https://images.pexels.com/photos/4048093/pexels-photo-4048093.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "name": "Tree",
+      "power": 990,
+      "startingPower": 100,
+      "trainStartDate": "2090-11-03T10:32:18Z"
+    },
+    {
+      "id": 2,
+      "ability": "Defender",
+      "imgSrc": "",
+      "name": "Invisble man",
+      "power": 9910,
+      "startingPower": 100,
+      "trainStartDate": "2090-11-03T10:32:18Z"
+    }
+  ],
+  "userCards": [
+    {
+      "cardIds": [
+        2
+      ],
+      "id": 1
+    },
+    {
+      "cardIds": [
+        1,
+        2
+      ],
+      "id": 2
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 <h3>{{ data.card.name }}</h3>
 <img src="{{ data.card.imgSrc }}" alt="hero-portrait" />
 <p>{{ data.card.startingPower }}</p>
-
 <mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
-  <button mat-button [mat-dialog-close]="'goodbye'">Add</button>
+  <button mat-button mat-dialog-close>Close</button>
+  <button *ngIf="this.addHeroFn" (click)="addHero()">Add</button>
+  <button *ngIf="this.trainFn" (click)="train()">Train</button>
 </mat-dialog-actions>

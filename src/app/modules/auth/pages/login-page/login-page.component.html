@@ -1,0 +1,36 @@
+<form ngClass="form login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <h2>Welcome back!</h2>
+  <div class="form-control">
+    <input
+      [ngClass]="{
+        'error-input': email?.invalid === true && email?.touched
+      }"
+      type="email"
+      formControlName="email"
+      [placeholder]="
+        email?.invalid && email?.touched
+          ? 'Please enter a valid email'
+          : 'Email'
+      "
+    />
+  </div>
+  <div class="form-control">
+    <input
+      [ngClass]="{
+        'error-input': password?.invalid === true && password?.touched
+      }"
+      type="password"
+      formControlName="password"
+      [placeholder]="
+        password?.invalid && password?.touched
+          ? 'Please enter password'
+          : 'Password'
+      "
+    />
+  </div>
+  <div class="form-control" [ngStyle]="{ display: 'block' }">
+    <input type="checkbox" formControlName="rememberMe" />
+    <label>Remember me</label>
+  </div>
+  <button type="submit" ngClass="primary-color btn">Login</button>
+</form>

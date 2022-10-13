@@ -1,6 +1,5 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { Card } from '../../model/card.model';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { Card } from 'src/app/shared/model/card.model';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

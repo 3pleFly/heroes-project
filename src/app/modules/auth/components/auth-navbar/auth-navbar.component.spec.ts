@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyHeroesLayoutComponent } from './my-heroes-layout.component';
+import { AuthNavbarComponent } from './auth-navbar.component';
 
-describe('MyHeroesLayoutComponent', () => {
-  let component: MyHeroesLayoutComponent;
-  let fixture: ComponentFixture<MyHeroesLayoutComponent>;
+describe('AuthNavbarComponent', () => {
+  let component: AuthNavbarComponent;
+  let fixture: ComponentFixture<AuthNavbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MyHeroesLayoutComponent ]
+      declarations: [ AuthNavbarComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MyHeroesLayoutComponent);
+    fixture = TestBed.createComponent(AuthNavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

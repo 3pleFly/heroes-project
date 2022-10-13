@@ -1,0 +1,41 @@
+<form
+  ngClass="form register"
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+>
+  <h2>Register A New Trainer</h2>
+  <div class="form-control">
+    <input type="email" formControlName="email" placeholder="Email" />
+    <label
+      *ngIf="email?.invalid && email?.touched"
+      [ngClass]="'error-input small'"
+    >
+      Please enter a valid email</label
+    >
+  </div>
+  <div class="form-control">
+    <input type="password" formControlName="password" placeholder="Password" />
+    <label
+      *ngIf="password?.invalid && password?.touched"
+      [ngClass]="'error-input small'"
+    >
+      Please enter a password with atleast: 1 Uppercase letter, 1 digit, and 1
+      symbol</label
+    >
+  </div>
+  <div class="form-control">
+    <input
+      type="password"
+      formControlName="confirmPassword"
+      placeholder="Confirm password"
+    />
+    <label
+      *ngIf="registerForm.errors?.['valuesDoNotMatch'] && password?.touched &&
+       confirmPassword?.touched"
+      [ngClass]="'error-input small'"
+    >
+      Password do not match</label
+    >
+  </div>
+  <button type="submit" ngClass="secondary-color btn">Sign me up</button>
+</form>

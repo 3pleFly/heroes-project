@@ -1,8 +1,10 @@
 <nav class="nav">
   <ul>
-    <li><a routerLink="/main">Main</a></li>
-    <li><a routerLink="/auth">Login / Register</a></li>
+    <li><a routerLink="/main">Home</a></li>
+    <li *ngIf="!this.isLoggedIn"><a routerLink="/auth">Login / Register</a></li>
+    <li *ngIf="this.isLoggedIn"><a routerLink="/user">My Heroes</a></li>
     <li><a routerLink="/about">About</a></li>
+    <li *ngIf="this.isLoggedIn"><a (click)="logout()">Log Out</a></li>
   </ul>
   <div class="hamburger" #burger (click)="toggleBurger(burger)">
     <span class="bar"></span>
