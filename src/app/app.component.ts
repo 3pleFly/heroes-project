@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertService } from './shared/services/alert.service';
 import { AuthService } from './shared/services/auth.service';
 import { HeroesService } from './shared/services/heroes.service';
 
@@ -8,18 +9,13 @@ import { HeroesService } from './shared/services/heroes.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  notification: string = '';
-  errorMessage: string = '';
+  notification: string | null = '';
 
-  constructor(
-    private authService: AuthService,
-    private heroesService: HeroesService
-  ) {}
+  constructor(private alertService: AlertService) {}
 
   ngOnInit(): void {
-    // const userId = this.authService.getUserData().id;
-    // if (userId) {
-    //   this.heroesService.updateUserCards(userId);
-    // }
+    this.alertService.messageStream.subscribe(
+      (message) => (this.notification = message)
+    );
   }
 }

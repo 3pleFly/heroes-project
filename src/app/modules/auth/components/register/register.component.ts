@@ -2,21 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/model/user.model';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MustMatchValidator } from 'src/app/shared/validators/must-match-validator';
 
 @Component({
-  selector: 'app-register-page',
-  templateUrl: './register-page.component.html',
-  styleUrls: ['./register-page.component.scss'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
 })
-export class RegisterPageComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
 
   constructor(
     private fbuilder: FormBuilder,
     private mustMatchValidator: MustMatchValidator,
     private authService: AuthService,
+    private alertService: AlertService,
     private router: Router
   ) {}
 
@@ -41,6 +43,7 @@ export class RegisterPageComponent implements OnInit {
       };
       this.authService.register(user).subscribe({
         next: (res) => {
+          this.alertService.notify('Registration successful')
           this.router.navigate(['/auth/login']);
         },
         error: (err) => {

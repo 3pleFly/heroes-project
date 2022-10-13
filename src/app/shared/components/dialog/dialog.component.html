@@ -1,8 +1,11 @@
 <h3>{{ data.card.name }}</h3>
+<p [ngClass]="'notification error'">
+  {{ uiErrorMessage }}
+</p>
 <img src="{{ data.card.imgSrc }}" alt="hero-portrait" />
-<p>{{ data.card.startingPower }}</p>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-  <button *ngIf="this.addHeroFn" (click)="addHero()">Add</button>
-  <button *ngIf="this.trainFn" (click)="train()">Train</button>
-</mat-dialog-actions>
+<p>{{ data.card.power }}</p>
+<div class="actions">
+  <button ngClass="btn small primary-color bold" mat-dialog-close>Close</button>
+  <button ngClass="btn small secondary-color bold" *ngIf="this.addHeroFn" (click)="addHero()">Add</button>
+  <button ngClass="btn small secondary-color bold" *ngIf="this.trainFn" (click)="train()">Train</button>
+</div>

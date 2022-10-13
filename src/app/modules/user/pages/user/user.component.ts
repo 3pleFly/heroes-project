@@ -4,7 +4,7 @@ import { DialogComponent } from 'src/app/shared/components/dialog/dialog.compone
 import { Card } from 'src/app/shared/model/card.model';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { HeroesService } from 'src/app/shared/services/heroes.service';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -17,7 +17,8 @@ export class UserComponent implements OnInit {
 
   constructor(
     private heroesService: HeroesService,
-    private authService: AuthService, private dialog: MatDialog
+    private authService: AuthService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -27,11 +28,18 @@ export class UserComponent implements OnInit {
   }
 
   openUserDialog(card: Card) {
-    this.dialog.open(DialogComponent, {data: {card, trainFn: this.boundDialogTrainButtonFn }});
+    let data = { card, trainFn: this.boundDialogTrainButtonFn };
+    this.dialog.open(DialogComponent, { data, autoFocus: false });
   }
 
-  dialogTrainButtonFn() {
-    console.log('train -in user component');
+  dialogTrainButtonFn(card: Card) {
+    const powerMultiplier =
+      Math.random() *
+        (environment.maxPowerUpgrade - environment.minPowerUpgrade) +
+      environment.minPowerUpgrade;      
+    card.power = card.power * powerMultiplier;
+    const userCards = this.heroesService.getCurrentSession().userCards;
+    console.log(this.heroesService.getCurrentSession());
     
   }
 }

@@ -2,22 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/model/user.model';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginPageComponent implements OnInit {
+export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  
-
 
   constructor(
     private fbuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +37,9 @@ export class LoginPageComponent implements OnInit {
       this.authService.login(user).subscribe(
         {
           next: (res) => {
+            this.alertService.notify('Login successful')
+              
+            
             this.router.navigate(['/myheroes']);
           },
           error: (err) => {

@@ -1,5 +1,6 @@
 <app-card
-  *ngFor="let card of cards"
+  *ngFor="let card of cards; let i = index"
+  [ngStyle]="{'background-color': i % 2 == 0 ? '#F8FFA8' : '#c0ffb8'}"
   [card]="card" mat-raised-button 
   (click)="openDialog(card)"
 ></app-card>

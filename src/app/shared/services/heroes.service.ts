@@ -15,45 +15,54 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json');
 //this service is singleton, and has a subscription, could this cause a memory leak?
 // When is it preferable not to make the service a singleton, how do you do that?
 export class HeroesService {
-  private _allCards$: Subject<Card[]> = new Subject<Card[]>();
+  private _allCards$: BehaviorSubject<Card[] | null> = new BehaviorSubject<
+    Card[] | null
+  >(null);
   private _userCards$: BehaviorSubject<Card[] | null> = new BehaviorSubject<
     Card[] | null
   >(null);
-  allCards$: Observable<Card[]> = this._allCards$.asObservable();
+  allCards$: Observable<Card[] | null> = this._allCards$.asObservable();
   userCards$: Observable<Card[] | null> = this._userCards$.asObservable();
 
   constructor(private http: HttpClient) {
-    this.getCards().subscribe((allCards) => {
+    this.requestCards().subscribe((allCards) => {
       this._allCards$.next(allCards);
     });
   }
 
-  getCards(): Observable<Card[]> {
-    return this.http.get<Card[]>(`${environment.apiUrl}cards`);
+  postNewUserCardIds(userId: number): Observable<UserCardIdsResponseModel> {
+    return this.http.post<UserCardIdsResponseModel>(
+      `${environment.apiUrl}usercards`,
+      {
+        id: userId,
+        cardIds: [],
+      }
+    );
   }
 
-  updateUserCards(userId: number): void {
-    this.getCards().subscribe((allCards) => {
-      this.getUserCardIdsByUserId(userId).subscribe((userCardIds) => {
-        const cards: Card[] = this.findCardsByCardIds(
-          userCardIds.cardIds,
-          allCards
-        );
-        this._userCards$.next(cards);
-      });
-    });
-  }
-
-  addHero(
+  putUserCardIds(
     cardIds: number[],
     userId: number
   ): Observable<UserCardIdsResponseModel> {
     return this.http.put<UserCardIdsResponseModel>(
       `${environment.apiUrl}usercards/${userId}`,
-      {
-        cardIds: cardIds,
-      }
+      { cardIds: cardIds }
     );
+  }
+
+  requestCards(): Observable<Card[]> {
+    return this.http.get<Card[]>(`${environment.apiUrl}cards`);
+  }
+
+  updateUserCards(userCards: Card[]): void {
+    this._userCards$.next(userCards);
+  }
+
+  getCurrentSession() {
+    return {
+      userCards: this._userCards$.getValue(),
+      allCards: this._allCards$.getValue(),
+    };
   }
 
   getUserCardIdsByUserId(userId: number): Observable<UserCardIdsResponseModel> {

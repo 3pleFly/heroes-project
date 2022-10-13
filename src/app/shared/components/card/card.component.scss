@@ -1,12 +1,13 @@
 :host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
 }

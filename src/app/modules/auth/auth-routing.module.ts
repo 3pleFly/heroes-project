@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthPageComponent } from './pages/auth-page/auth-page.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
@@ -15,9 +15,9 @@ const routes: Routes = [
       },
       {
         path: 'login',
-        component: LoginPageComponent,
+        component: LoginComponent,
       },
-      { path: 'register', component: RegisterPageComponent },
+      { path: 'register', component: RegisterComponent },
     ],
   },
 ];

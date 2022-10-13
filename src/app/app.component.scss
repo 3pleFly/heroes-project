@@ -1,6 +1,20 @@
 .notification {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 800;
-    position: fixed;
-    left: 20px
+    letter-spacing: 1px;
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    color: rgb(252, 231, 231);
+    border: 1px solid #10683e;
+    background: #0db664;
+    transition: 0.5s all ease-in-out;
+    z-index: 1001;
+}
+
+.active {
+    opacity: 1;
+
 }

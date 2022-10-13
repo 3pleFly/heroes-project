@@ -17,8 +17,8 @@
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/4048093/pexels-photo-4048093.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "name": "Tree",
-      "power": 990,
-      "startingPower": 100,
+      "power": 115,
+      "startingPower": 115,
       "trainStartDate": "2090-11-03T10:32:18Z"
     },
     {
@@ -26,8 +26,8 @@
       "ability": "Defender",
       "imgSrc": "",
       "name": "Invisble man",
-      "power": 9910,
-      "startingPower": 100,
+      "power": 175,
+      "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z"
     }
   ],
@@ -40,8 +40,8 @@
     },
     {
       "cardIds": [
-        1,
-        2
+        2,
+        1
       ],
       "id": 2
     }

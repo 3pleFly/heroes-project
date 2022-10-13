@@ -1,5 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AlertService } from '../../services/alert.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -8,20 +9,24 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
-  
   isLoggedInSubscription!: Subscription;
   isLoggedIn: boolean = false;
   innerWidth!: number;
 
-  constructor(private authService: AuthService) {}
-  
+  constructor(
+    private authService: AuthService,
+    private alertService: AlertService
+  ) {}
+
   ngOnDestroy(): void {
     this.isLoggedInSubscription.unsubscribe();
   }
 
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
-    this.isLoggedInSubscription = this.authService.isLoggedIn$.subscribe({next: (res) => this.isLoggedIn = res})
+    this.isLoggedInSubscription = this.authService.isLoggedIn$.subscribe({
+      next: (res) => (this.isLoggedIn = res),
+    });
   }
 
   @HostListener('window:resize', ['$event'])
@@ -35,7 +40,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   logout(): void {
     this.authService.endSession();
+    this.alertService.notify("Logged out")
   }
-
-
 }

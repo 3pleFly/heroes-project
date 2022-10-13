@@ -23,16 +23,7 @@ export class AuthService {
     private router: Router,
     private heroesService: HeroesService
   ) {
-    const token = localStorage.getItem('token');
-    if (token) {
-      const userId = this.getUserData().id;
-      if (userId) {
-        this._isLoggedIn$.next(true);
-        this.heroesService.updateUserCards(userId);
-      } else {
-        this._isLoggedIn$.next(false);
-      }
-    }
+    this.setSession();
   }
 
   register(user: User) {
@@ -42,12 +33,11 @@ export class AuthService {
       })
       .pipe(
         tap((res) => {
-          this.http
-            .post(`${environment.apiUrl}usercards`, {
-              id: res.user.id,
-              cardIds: [],
-            })
-            .subscribe();
+          if (res.user.id) {
+            this.heroesService.postNewUserCardIds(res.user.id).subscribe();
+          } else {
+            throw new Error('User not found!');
+          }
         })
       );
   }
@@ -97,9 +87,21 @@ export class AuthService {
   }
 
   setSession() {
-    const userData = localStorage.getItem('USER_DATA');
-    if (userData !== null) {
+    const userData: User = JSON.parse(localStorage.getItem('USER_DATA') || 'empty');
+    if (userData.id) {
       this._isLoggedIn$.next(true);
+      this.heroesService
+        .getUserCardIdsByUserId(userData.id)
+        .subscribe((userCardIds) => {
+          const allCards = this.heroesService.getCurrentSession().allCards;
+          if (allCards) {
+            const userCards = this.heroesService.findCardsByCardIds(
+              userCardIds.cardIds,
+              allCards
+            );
+            this.heroesService.updateUserCards(userCards);
+          }
+        });
     } else {
       this._isLoggedIn$.next(false);
     }
