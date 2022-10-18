@@ -74,15 +74,4 @@ export class HeroesService implements OnDestroy {
     );
   }
 
-  // findCardsByCardIds(cardIds: number[], cards: Card[]): Card[] {
-  //   const matchingCards: Card[] = [];
-  //   cardIds.forEach((id) => {
-  //     cards.find((card) => {
-  //       if (card.id === id) {
-  //         matchingCards.push(card);
-  //       }
-  //     });
-  //   });
-  //   return matchingCards;
-  // }
 }

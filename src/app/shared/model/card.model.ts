@@ -1,5 +1,4 @@
 export interface Card {
-
   id: number;
   name: string;
   ability: string;
@@ -7,4 +6,6 @@ export interface Card {
   startingPower: number;
   power: number;
   imgSrc: string;
+  nextTrainDate: Date;
+  trainCount: number;
 }

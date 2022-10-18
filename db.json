@@ -37,21 +37,21 @@
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/4048093/pexels-photo-4048093.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "name": "Groot",
-      "power": 155,
-      "startingPower": 905,
+      "power": 115,
+      "startingPower": 115,
       "trainStartDate": "2090-11-03T10:32:18Z",
-      "lastTrainDate": "2022-10-18T12:31:46.817Z",
-      "trainCount": 5
+      "nextTrainDate": "2022-10-18T12:31:46.817Z",
+      "trainCount": 0
     },
     {
       "id": 2,
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&w=600",
       "name": "Black super man",
-      "power": 382,
+      "power": 175,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z",
-      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "nextTrainDate": "2022-10-19T13:45:08.737Z",
       "trainCount": 0
     },
     {
@@ -62,7 +62,7 @@
       "power": 175,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z",
-      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "nextTrainDate": "2090-11-03T10:32:18Z",
       "trainCount": 0
     },
     {
@@ -73,7 +73,7 @@
       "power": 175,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z",
-      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "nextTrainDate": "2090-11-03T10:32:18Z",
       "trainCount": 0
     },
     {
@@ -84,7 +84,7 @@
       "power": 253,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z",
-      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "nextTrainDate": "2090-11-03T10:32:18Z",
       "trainCount": 0
     },
     {
@@ -95,7 +95,7 @@
       "power": 175,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z",
-      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "nextTrainDate": "2090-11-03T10:32:18Z",
       "trainCount": 0
     },
     {
@@ -106,7 +106,7 @@
       "power": 175,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z",
-      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "nextTrainDate": "2090-11-03T10:32:18Z",
       "trainCount": 0
     },
     {
@@ -117,7 +117,7 @@
       "power": 175,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z",
-      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "nextTrainDate": "2090-11-03T10:32:18Z",
       "trainCount": 0
     },
     {
@@ -128,7 +128,7 @@
       "power": 175,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z",
-      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "nextTrainDate": "2090-11-03T10:32:18Z",
       "trainCount": 0
     }
   ],
@@ -148,22 +148,11 @@
           "ability": "Attacker",
           "imgSrc": "https://images.pexels.com/photos/4048093/pexels-photo-4048093.jpeg?auto=compress&cs=tinysrgb&w=1600",
           "name": "Groot",
-          "power": 136,
-          "startingPower": 905,
+          "power": 139,
+          "startingPower": 115,
           "trainStartDate": "2090-11-03T10:32:18Z",
-          "lastTrainDate": "2022-10-18T12:31:46.817Z",
+          "nextTrainDate": "2022-10-19T13:49:05.534Z",
           "trainCount": 5
-        },
-        {
-          "id": 2,
-          "ability": "Attacker",
-          "imgSrc": "https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&w=600",
-          "name": "Black super man",
-          "power": 175,
-          "startingPower": 175,
-          "trainStartDate": "2090-11-03T10:32:18Z",
-          "lastTrainDate": "2090-11-03T10:32:18Z",
-          "trainCount": 0
         }
       ],
       "id": 6
