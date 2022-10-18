@@ -14,6 +14,11 @@
       "email": "hello@gmail",
       "password": "$2a$10$G7PldQdCp.6cyfBk2AB3Aeu14VCub.ZZx5bg3jNESok2vuOhTY7AO",
       "id": 3
+    },
+    {
+      "email": "saber2@gmail.com",
+      "password": "$2a$10$Byzqa4E/uWezsuoTOXeyuuinCcEReCamYnK6C.WpLdIL5lW5877Rm",
+      "id": 4
     }
   ],
   "cards": [
@@ -22,7 +27,7 @@
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/4048093/pexels-photo-4048093.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "name": "Groot",
-      "power": 115,
+      "power": 358,
       "startingPower": 115,
       "trainStartDate": "2090-11-03T10:32:18Z"
     },
@@ -39,8 +44,8 @@
       "id": 3,
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/11355572/pexels-photo-11355572.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "name": "PeBoy",
-      "power": 175,
+      "name": "PeasBoy",
+      "power": 327,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z"
     },
@@ -58,7 +63,7 @@
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/2854693/pexels-photo-2854693.jpeg?auto=compress&cs=tinysrgb&w=600",
       "name": "Spiderman",
-      "power": 175,
+      "power": 253,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z"
     },
@@ -101,24 +106,21 @@
   ],
   "userCards": [
     {
-      "cardIds": [
-        2
-      ],
+      "cardIds": [2],
       "id": 1
     },
     {
-      "cardIds": [
-        2,
-        1
-      ],
+      "cardIds": [2, 1, 5],
       "id": 2
     },
     {
-      "cardIds": [
-        2,
-        1
-      ],
+      "cardIds": [2, 1],
       "id": 3
+    },
+    {
+      "cardIds": [3],
+      "id": 4
     }
-  ]
+  ],
+  "trainCount": [{ "userId": 1, "cardId": 1, "trainCount": 1 }]
 }

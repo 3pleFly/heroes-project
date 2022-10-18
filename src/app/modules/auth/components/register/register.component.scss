@@ -1,7 +1,12 @@
-.register > *{
-    font-size: 1rem;
-}
+// .register > *{
+//     font-size: 1rem;
+// }
 
 .register > h2 {
     font-size: 1.4rem;
+}
+
+:host {
+    width: 80%;
+    max-width: 350px;
 }

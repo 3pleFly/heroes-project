@@ -5,6 +5,7 @@ import { User } from 'src/app/shared/model/user.model';
 import { AlertService } from 'src/app/shared/services/alert.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MustMatchValidator } from 'src/app/shared/validators/must-match-validator';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -32,7 +33,7 @@ export class RegisterComponent implements OnInit {
             Validators.required,
             Validators.minLength(8),
             Validators.maxLength(16),
-            Validators.pattern('^(?=.*\\d)(?=.*\\W+)(?=.*[a-z])(?=.*[A-Z]).*$'),
+            Validators.pattern(environment.regexPasswordPattern),
           ],
         ],
         confirmPassword: ['', Validators.required],

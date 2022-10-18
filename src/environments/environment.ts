@@ -7,7 +7,7 @@ export const environment = {
   apiUrl: 'http://localhost:3000/',
   maxPowerUpgrade: 1.1,
   minPowerUpgrade: 1,
-  regexPattern:'(?=.*\d)(?=.*\W+)(?=.*[a-z])(?=.*[A-Z]).*' 
+  regexPasswordPattern:'^(?=.*\\d)(?=.*\\W+)(?=.*[a-z])(?=.*[A-Z]).*$' 
 };
 
 /*

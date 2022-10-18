@@ -30,7 +30,14 @@
           : 'Password'
       "
     />
+    <label
+      [ngClass]="'error small label-box'"
+      *ngIf="(password?.errors?.['minlength'] || password?.errors?.['maxlength']) && password?.touched"
+    >
+      Please enter a password of 8 - 16 characters
+    </label>
   </div>
+
   <div class="form-control" [ngStyle]="{ display: 'block' }">
     <input type="checkbox" formControlName="rememberMe" />
     <label>Remember me</label>
