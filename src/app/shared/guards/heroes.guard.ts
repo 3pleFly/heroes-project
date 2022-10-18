@@ -9,13 +9,12 @@ import {
   UrlSegment,
   UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class MyHeroesGuard implements CanActivate, CanLoad {
+export class HeroesGuard implements CanActivate, CanLoad {
   constructor(private authService: AuthService, private router: Router) {}
 
   isLoggedIn(): boolean {

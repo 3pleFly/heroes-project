@@ -153,6 +153,17 @@
           "trainStartDate": "2090-11-03T10:32:18Z",
           "nextTrainDate": "2022-10-19T13:49:05.534Z",
           "trainCount": 5
+        },
+        {
+          "id": 2,
+          "ability": "Attacker",
+          "imgSrc": "https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "name": "Black super man",
+          "power": 175,
+          "startingPower": 175,
+          "trainStartDate": "2090-11-03T10:32:18Z",
+          "nextTrainDate": "2022-10-19T13:45:08.737Z",
+          "trainCount": 2
         }
       ],
       "id": 6

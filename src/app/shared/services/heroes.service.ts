@@ -26,7 +26,7 @@ export class HeroesService implements OnDestroy {
   allCardsSubscription!: Subscription;
 
   constructor(private http: HttpClient) {
-    this.allCardsSubscription = this.requestCards().subscribe((allCards) => {
+    this.allCardsSubscription = this.getAllCards().subscribe((allCards) => {
       this._allCards$.next(allCards);
     });
   }
@@ -49,7 +49,7 @@ export class HeroesService implements OnDestroy {
     );
   }
 
-  requestCards(): Observable<Card[]> {
+  getAllCards(): Observable<Card[]> {
     return this.http.get<Card[]>(`${environment.apiUrl}cards`);
   }
 

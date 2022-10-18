@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './shared/guards/auth.guard';
-import { MyHeroesGuard } from './shared/guards/my-heroes.guard';
+import { HeroesGuard } from './shared/guards/heroes.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -11,6 +11,8 @@ const routes: Routes = [
       import('./modules/main/main-page.module').then(
         (m) => m.MainPageModule
       ),
+      canLoad: [HeroesGuard],
+      canActivate: [HeroesGuard]
   },
   {
     path: 'auth',
@@ -34,8 +36,8 @@ const routes: Routes = [
       import('./modules/user/user.module').then(
         (m) => m.UserModule
       ),
-      canLoad: [MyHeroesGuard],
-      canActivate: [MyHeroesGuard]
+      canLoad: [HeroesGuard],
+      canActivate: [HeroesGuard]
   },
   { path: '**', redirectTo: 'main', pathMatch: 'full' },
 ];
