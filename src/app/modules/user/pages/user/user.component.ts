@@ -17,7 +17,9 @@ export class UserComponent implements OnInit {
   public boundMainDialog = this.openUserDialog.bind(this);
   public boundDialogTrainButtonFn = this.dialogTrainButtonFn.bind(this);
 
-  constructor(private alertService: AlertService,
+  constructor(
+    private alertService: AlertService,
+    private authService: AuthService,
     private heroesService: HeroesService,
     private dialog: MatDialog
   ) {}
@@ -38,9 +40,24 @@ export class UserComponent implements OnInit {
       Math.random() *
         (environment.maxPowerUpgrade - environment.minPowerUpgrade) +
       environment.minPowerUpgrade;
-    card.power = Math.floor(card.power * powerMultiplier);
-    this.heroesService.putCard(card).subscribe();
-    this.alertService.notify("Trained " + card.name + "!");
 
+    if (card.trainCount < 5) {
+      card.power = Math.floor(card.power * powerMultiplier);
+
+      if (card.trainCount === 4) {
+        const nextDate = new Date();
+        nextDate.setDate(nextDate.getDate() + 1);
+        card.nextTrainDate = nextDate;
+      }
+
+      card.trainCount++;
+      const userId = this.authService.getUserData().id;
+      if (userId) {
+        this.heroesService.putUserCards(userId).subscribe();
+      }
+      this.alertService.notify('Trained ' + card.name + '!');
+    } else {
+      this.alertService.error(card.name + ' is too tired to train');
+    }
   }
 }
