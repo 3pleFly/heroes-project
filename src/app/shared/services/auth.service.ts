@@ -34,7 +34,7 @@ export class AuthService {
       .pipe(
         tap((res) => {
           if (res.user.id) {
-            this.heroesService.postNewUserCardIds(res.user.id).subscribe();
+            this.heroesService.createUserCards(res.user.id).subscribe();
           } else {
             throw new Error('User not found!');
           }
@@ -87,20 +87,15 @@ export class AuthService {
   }
 
   setSession() {
-    const userData: User = JSON.parse(localStorage.getItem('USER_DATA') as string);
+    const userData: User = JSON.parse(
+      localStorage.getItem('USER_DATA') as string
+    );
     if (userData && userData.id) {
       this._isLoggedIn$.next(true);
       this.heroesService
-        .getUserCardIdsByUserId(userData.id)
-        .subscribe((userCardIds) => {
-          const allCards = this.heroesService.getCurrentSession().allCards;
-          if (allCards) {
-            const userCards = this.heroesService.findCardsByCardIds(
-              userCardIds.cardIds,
-              allCards
-            );
-            this.heroesService.updateUserCards(userCards);
-          }
+        .getUserCardsByUserId(userData.id)
+        .subscribe((userCards) => {
+          this.heroesService.updateUserCards(userCards.cards);
         });
     } else {
       this._isLoggedIn$.next(false);

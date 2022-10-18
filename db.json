@@ -19,6 +19,16 @@
       "email": "saber2@gmail.com",
       "password": "$2a$10$Byzqa4E/uWezsuoTOXeyuuinCcEReCamYnK6C.WpLdIL5lW5877Rm",
       "id": 4
+    },
+    {
+      "email": "hero@gmail.com",
+      "password": "$2a$10$hi5gpFDrUNcb.P/Q1hab2ueRYZ5GJhBUUuYHMwEyPxN2i/MiNLc3q",
+      "id": 5
+    },
+    {
+      "email": "hello@gmail.com",
+      "password": "$2a$10$a52vIl3VFfMGt.n5fId1I.of3TYzR3A6SwRzp5OYC/T7pBKic36O.",
+      "id": 6
     }
   ],
   "cards": [
@@ -27,27 +37,33 @@
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/4048093/pexels-photo-4048093.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "name": "Groot",
-      "power": 358,
-      "startingPower": 115,
-      "trainStartDate": "2090-11-03T10:32:18Z"
+      "power": 155,
+      "startingPower": 905,
+      "trainStartDate": "2090-11-03T10:32:18Z",
+      "lastTrainDate": "2022-10-18T12:31:46.817Z",
+      "trainCount": 5
     },
     {
       "id": 2,
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&w=600",
       "name": "Black super man",
-      "power": 175,
+      "power": 382,
       "startingPower": 175,
-      "trainStartDate": "2090-11-03T10:32:18Z"
+      "trainStartDate": "2090-11-03T10:32:18Z",
+      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "trainCount": 0
     },
     {
       "id": 3,
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/11355572/pexels-photo-11355572.jpeg?auto=compress&cs=tinysrgb&w=600",
       "name": "PeasBoy",
-      "power": 327,
+      "power": 175,
       "startingPower": 175,
-      "trainStartDate": "2090-11-03T10:32:18Z"
+      "trainStartDate": "2090-11-03T10:32:18Z",
+      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "trainCount": 0
     },
     {
       "id": 4,
@@ -56,7 +72,9 @@
       "name": "Fire man",
       "power": 175,
       "startingPower": 175,
-      "trainStartDate": "2090-11-03T10:32:18Z"
+      "trainStartDate": "2090-11-03T10:32:18Z",
+      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "trainCount": 0
     },
     {
       "id": 5,
@@ -65,7 +83,9 @@
       "name": "Spiderman",
       "power": 253,
       "startingPower": 175,
-      "trainStartDate": "2090-11-03T10:32:18Z"
+      "trainStartDate": "2090-11-03T10:32:18Z",
+      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "trainCount": 0
     },
     {
       "id": 6,
@@ -74,7 +94,9 @@
       "name": "Wonderwomen",
       "power": 175,
       "startingPower": 175,
-      "trainStartDate": "2090-11-03T10:32:18Z"
+      "trainStartDate": "2090-11-03T10:32:18Z",
+      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "trainCount": 0
     },
     {
       "id": 7,
@@ -83,7 +105,9 @@
       "name": "Batman",
       "power": 175,
       "startingPower": 175,
-      "trainStartDate": "2090-11-03T10:32:18Z"
+      "trainStartDate": "2090-11-03T10:32:18Z",
+      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "trainCount": 0
     },
     {
       "id": 8,
@@ -92,7 +116,9 @@
       "name": "Nurse man",
       "power": 175,
       "startingPower": 175,
-      "trainStartDate": "2090-11-03T10:32:18Z"
+      "trainStartDate": "2090-11-03T10:32:18Z",
+      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "trainCount": 0
     },
     {
       "id": 9,
@@ -101,26 +127,46 @@
       "name": "MF DOOM",
       "power": 175,
       "startingPower": 175,
-      "trainStartDate": "2090-11-03T10:32:18Z"
+      "trainStartDate": "2090-11-03T10:32:18Z",
+      "lastTrainDate": "2090-11-03T10:32:18Z",
+      "trainCount": 0
     }
   ],
-  "userCards": [
+  "usercards": [
     {
-      "cardIds": [2],
-      "id": 1
+      "id": 2,
+      "cards": []
     },
     {
-      "cardIds": [2, 1, 5],
-      "id": 2
+      "id": 3,
+      "cards": []
     },
     {
-      "cardIds": [2, 1],
-      "id": 3
-    },
-    {
-      "cardIds": [3],
-      "id": 4
+      "cards": [
+        {
+          "id": 1,
+          "ability": "Attacker",
+          "imgSrc": "https://images.pexels.com/photos/4048093/pexels-photo-4048093.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          "name": "Groot",
+          "power": 136,
+          "startingPower": 905,
+          "trainStartDate": "2090-11-03T10:32:18Z",
+          "lastTrainDate": "2022-10-18T12:31:46.817Z",
+          "trainCount": 5
+        },
+        {
+          "id": 2,
+          "ability": "Attacker",
+          "imgSrc": "https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "name": "Black super man",
+          "power": 175,
+          "startingPower": 175,
+          "trainStartDate": "2090-11-03T10:32:18Z",
+          "lastTrainDate": "2090-11-03T10:32:18Z",
+          "trainCount": 0
+        }
+      ],
+      "id": 6
     }
-  ],
-  "trainCount": [{ "userId": 1, "cardId": 1, "trainCount": 1 }]
+  ]
 }

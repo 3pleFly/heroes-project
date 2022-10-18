@@ -3,8 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
 import { Card } from '../model/card.model';
-import { AuthService } from './auth.service';
-import { UserCardIdsResponseModel } from '../model/userCardIdsResponse.model';
+import UserCardsResponse from '../model/userCardsResponse.model';
 
 const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
@@ -31,28 +30,22 @@ export class HeroesService implements OnDestroy {
       this._allCards$.next(allCards);
     });
   }
-  
+
   ngOnDestroy(): void {
     this.allCardsSubscription.unsubscribe();
   }
 
-  postNewUserCardIds(userId: number): Observable<UserCardIdsResponseModel> {
-    return this.http.post<UserCardIdsResponseModel>(
-      `${environment.apiUrl}usercards`,
-      {
-        id: userId,
-        cardIds: [],
-      }
-    );
+  createUserCards(userId: number): Observable<UserCardsResponse> {
+    return this.http.post<UserCardsResponse>(`${environment.apiUrl}usercards`, {
+      id: userId,
+      cards: [],
+    });
   }
 
-  putUserCardIds(
-    cardIds: number[],
-    userId: number
-  ): Observable<UserCardIdsResponseModel> {
-    return this.http.put<UserCardIdsResponseModel>(
+  putUserCards(userId: number): Observable<UserCardsResponse> {
+    return this.http.put<UserCardsResponse>(
       `${environment.apiUrl}usercards/${userId}`,
-      { cardIds: cardIds }
+      { cards: this._userCards$.getValue() }
     );
   }
 
@@ -75,21 +68,21 @@ export class HeroesService implements OnDestroy {
     };
   }
 
-  getUserCardIdsByUserId(userId: number): Observable<UserCardIdsResponseModel> {
-    return this.http.get<UserCardIdsResponseModel>(
+  getUserCardsByUserId(userId: number): Observable<UserCardsResponse> {
+    return this.http.get<UserCardsResponse>(
       `${environment.apiUrl}usercards/${userId}`
     );
   }
 
-  findCardsByCardIds(cardIds: number[], cards: Card[]): Card[] {
-    const matchingCards: Card[] = [];
-    cardIds.forEach((id) => {
-      cards.find((card) => {
-        if (card.id === id) {
-          matchingCards.push(card);
-        }
-      });
-    });
-    return matchingCards;
-  }
+  // findCardsByCardIds(cardIds: number[], cards: Card[]): Card[] {
+  //   const matchingCards: Card[] = [];
+  //   cardIds.forEach((id) => {
+  //     cards.find((card) => {
+  //       if (card.id === id) {
+  //         matchingCards.push(card);
+  //       }
+  //     });
+  //   });
+  //   return matchingCards;
+  // }
 }

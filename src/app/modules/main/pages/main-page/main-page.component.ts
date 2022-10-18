@@ -58,7 +58,7 @@ export class MainPageComponent implements OnInit {
         const userCardIds: number[] = userCards.map((card) => card.id);
 
         this.heroesService.updateUserCards(userCards);
-        this.heroesService.putUserCardIds(userCardIds, userId).subscribe();
+        this.heroesService.putUserCards(userId).subscribe();
         this.alertService.notify('New hero added');
       }
     }
