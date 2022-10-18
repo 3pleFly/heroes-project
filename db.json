@@ -9,6 +9,11 @@
       "email": "saber@gmail.com",
       "password": "$2a$10$4vBa.YyyNTXYa9VW3kl57u8U/2wh6zAH/mjnM.w0a50R7JZ81xwzu",
       "id": 2
+    },
+    {
+      "email": "hello@gmail",
+      "password": "$2a$10$G7PldQdCp.6cyfBk2AB3Aeu14VCub.ZZx5bg3jNESok2vuOhTY7AO",
+      "id": 3
     }
   ],
   "cards": [
@@ -16,16 +21,79 @@
       "id": 1,
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/4048093/pexels-photo-4048093.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      "name": "Tree",
+      "name": "Groot",
       "power": 115,
       "startingPower": 115,
       "trainStartDate": "2090-11-03T10:32:18Z"
     },
     {
       "id": 2,
-      "ability": "Defender",
-      "imgSrc": "",
-      "name": "Invisble man",
+      "ability": "Attacker",
+      "imgSrc": "https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Black super man",
+      "power": 175,
+      "startingPower": 175,
+      "trainStartDate": "2090-11-03T10:32:18Z"
+    },
+    {
+      "id": 3,
+      "ability": "Attacker",
+      "imgSrc": "https://images.pexels.com/photos/11355572/pexels-photo-11355572.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "PeBoy",
+      "power": 175,
+      "startingPower": 175,
+      "trainStartDate": "2090-11-03T10:32:18Z"
+    },
+    {
+      "id": 4,
+      "ability": "Attacker",
+      "imgSrc": "https://images.pexels.com/photos/70573/fireman-firefighter-rubble-9-11-70573.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Fire man",
+      "power": 175,
+      "startingPower": 175,
+      "trainStartDate": "2090-11-03T10:32:18Z"
+    },
+    {
+      "id": 5,
+      "ability": "Attacker",
+      "imgSrc": "https://images.pexels.com/photos/2854693/pexels-photo-2854693.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Spiderman",
+      "power": 175,
+      "startingPower": 175,
+      "trainStartDate": "2090-11-03T10:32:18Z"
+    },
+    {
+      "id": 6,
+      "ability": "Attacker",
+      "imgSrc": "https://images.pexels.com/photos/3180273/pexels-photo-3180273.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Wonderwomen",
+      "power": 175,
+      "startingPower": 175,
+      "trainStartDate": "2090-11-03T10:32:18Z"
+    },
+    {
+      "id": 7,
+      "ability": "Attacker",
+      "imgSrc": "https://images.pexels.com/photos/2304123/pexels-photo-2304123.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Batman",
+      "power": 175,
+      "startingPower": 175,
+      "trainStartDate": "2090-11-03T10:32:18Z"
+    },
+    {
+      "id": 8,
+      "ability": "Attacker",
+      "imgSrc": "https://images.pexels.com/photos/6303559/pexels-photo-6303559.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Nurse man",
+      "power": 175,
+      "startingPower": 175,
+      "trainStartDate": "2090-11-03T10:32:18Z"
+    },
+    {
+      "id": 9,
+      "ability": "Attacker",
+      "imgSrc": "https://images.pexels.com/photos/7809123/pexels-photo-7809123.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "MF DOOM",
       "power": 175,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z"
@@ -44,6 +112,13 @@
         1
       ],
       "id": 2
+    },
+    {
+      "cardIds": [
+        2,
+        1
+      ],
+      "id": 3
     }
   ]
 }

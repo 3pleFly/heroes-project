@@ -7,6 +7,7 @@ import { Card } from 'src/app/shared/model/card.model';
 })
 export class CardComponent implements OnInit {
   @Input() card!: Card;
+  @Input() powerOrStartingPower!: boolean;
 
   constructor() {}
 

@@ -1,6 +1,12 @@
 <app-card
   *ngFor="let card of cards; let i = index"
-  [ngStyle]="{'background-color': i % 2 == 0 ? '#F8FFA8' : '#c0ffb8'}"
-  [card]="card" mat-raised-button 
+  [powerOrStartingPower]="this.powerOrStartingPower"
+  [ngStyle]="{ 'background-color': i % 2 == 0 ? '#F8FFA8' : '#c0ffb8' }"
+  [card]="card"
+  mat-raised-button
   (click)="openDialog(card)"
 ></app-card>
+<div class="empty-cards" *ngIf="this.cards?.length === 0">
+  <h1>No heroes.</h1>
+  <h2>Add some heroes from <a routerLink="/main/heroes">the home page</a> to begin!</h2>
+</div>

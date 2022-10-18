@@ -87,8 +87,8 @@ export class AuthService {
   }
 
   setSession() {
-    const userData: User = JSON.parse(localStorage.getItem('USER_DATA') || 'empty');
-    if (userData.id) {
+    const userData: User = JSON.parse(localStorage.getItem('USER_DATA') as string);
+    if (userData && userData.id) {
       this._isLoggedIn$.next(true);
       this.heroesService
         .getUserCardIdsByUserId(userData.id)

@@ -26,7 +26,15 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fbuilder.group(
       {
         email: ['', [Validators.required, Validators.email]],
-        password: ['', Validators.required],
+        password: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(8),
+            Validators.maxLength(16),
+            Validators.pattern('^(?=.*\\d)(?=.*\\W+)(?=.*[a-z])(?=.*[A-Z]).*$'),
+          ],
+        ],
         confirmPassword: ['', Validators.required],
       },
       {
@@ -43,7 +51,7 @@ export class RegisterComponent implements OnInit {
       };
       this.authService.register(user).subscribe({
         next: (res) => {
-          this.alertService.notify('Registration successful')
+          this.alertService.notify('Registration successful');
           this.router.navigate(['/auth/login']);
         },
         error: (err) => {

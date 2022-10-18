@@ -20,7 +20,7 @@ export class MainPageComponent implements OnInit {
     private heroesService: HeroesService,
     private authService: AuthService,
     private dialog: MatDialog,
-    private alertSerice: AlertService
+    private alertService: AlertService
   ) {}
 
   ngOnInit(): void {
@@ -47,7 +47,7 @@ export class MainPageComponent implements OnInit {
           .getCurrentSession()
           .userCards?.find((card) => card.id === cardId)
       ) {
-        this.alertSerice.error('You already have the hero');
+        this.alertService.error('You already have the hero');
         return;
       }
       const newCard = this.heroesService
@@ -59,7 +59,7 @@ export class MainPageComponent implements OnInit {
 
         this.heroesService.updateUserCards(userCards);
         this.heroesService.putUserCardIds(userCardIds, userId).subscribe();
-        this.alertSerice.notify('New hero added');
+        this.alertService.notify('New hero added');
       }
     }
   }

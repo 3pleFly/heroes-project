@@ -58,6 +58,10 @@ export class HeroesService {
     this._userCards$.next(userCards);
   }
 
+  putCard(card: Card): Observable<Card> {
+    return this.http.put<Card>(`${environment.apiUrl}cards/${card.id}`, card);
+  }
+
   getCurrentSession() {
     return {
       userCards: this._userCards$.getValue(),

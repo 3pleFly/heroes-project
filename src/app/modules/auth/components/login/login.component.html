@@ -1,5 +1,8 @@
 <form ngClass="form login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <h2>Welcome back!</h2>
+  <p [ngClass]="'notification error'">
+    {{ uiErrorMessage }}
+  </p>
   <div class="form-control">
     <input
       [ngClass]="{

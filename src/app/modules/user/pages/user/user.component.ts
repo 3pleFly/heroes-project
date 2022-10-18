@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { switchMap } from 'rxjs';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 import { Card } from 'src/app/shared/model/card.model';
 import { AuthService } from 'src/app/shared/services/auth.service';
@@ -36,10 +37,8 @@ export class UserComponent implements OnInit {
     const powerMultiplier =
       Math.random() *
         (environment.maxPowerUpgrade - environment.minPowerUpgrade) +
-      environment.minPowerUpgrade;      
-    card.power = card.power * powerMultiplier;
-    const userCards = this.heroesService.getCurrentSession().userCards;
-    console.log(this.heroesService.getCurrentSession());
-    
+      environment.minPowerUpgrade;
+    card.power = Math.floor(card.power * powerMultiplier);
+    this.heroesService.putCard(card).subscribe();
   }
 }

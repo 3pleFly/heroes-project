@@ -14,4 +14,14 @@ app-card {
     &:hover {
         opacity: 0.7;
     }
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.empty-cards {
+    text-align: center;
+}
+
+h2 > a {
+    text-decoration: underline;
+    color: rgb(104, 169, 223);
 }

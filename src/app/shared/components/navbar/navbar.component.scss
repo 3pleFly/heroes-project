@@ -1,21 +1,94 @@
 .nav {
-    border-bottom: 1px solid #ffcf97
-}
-.nav > ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
+  border-bottom: 1px solid #ffcf97;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #ffefba; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #ffefba
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #ffefba
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-ul > li {
-    list-style: none;
-    padding: 10px;
-    &:hover {
-        color: #1eb36b;
-    }
+.navbar-content {
+  h1 {
+    color: #000000;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+}
+
+.nav-items {
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-items > li {
+  list-style: none;
+  padding: 10px 15px;
+}
+
+.nav-items > li > a:hover {
+  color: #1eb36b;
 }
 
 li > a {
-    cursor: pointer;
+  cursor: pointer;
+}
+.hamburger {
+  margin: 5px;
+  display: none;
+  cursor: pointer;
+}
 
+.bar {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .nav {
+    align-items: initial;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  .nav-items > li {
+    padding: 10px 5px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .active {
+    display: block;
+    padding: 0;
+    padding-top: 10px;
+  }
+
+  .navbar-content h1 {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }

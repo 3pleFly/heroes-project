@@ -8,7 +8,7 @@
     <input type="email" formControlName="email" placeholder="Email" />
     <label
       *ngIf="email?.invalid && email?.touched"
-      [ngClass]="'error-input small'"
+      [ngClass]="'error small label-box'"
     >
       Please enter a valid email</label
     >
@@ -16,11 +16,17 @@
   <div class="form-control">
     <input type="password" formControlName="password" placeholder="Password" />
     <label
-      *ngIf="password?.invalid && password?.touched"
-      [ngClass]="'error-input small'"
+      *ngIf="password?.errors?.['pattern'] && password?.touched"
+      [ngClass]="'error small label-box'"
     >
       Please enter a password with atleast: 1 Uppercase letter, 1 digit, and 1
       symbol</label
+    >
+    <label
+      *ngIf="(password?.errors?.['minlength'] || password?.errors?.['maxlength']) && password?.touched"
+      [ngClass]="'error small label-box'"
+    >
+      Please enter a password of 8 - 16 characters</label
     >
   </div>
   <div class="form-control">
@@ -32,7 +38,7 @@
     <label
       *ngIf="registerForm.errors?.['valuesDoNotMatch'] && password?.touched &&
        confirmPassword?.touched"
-      [ngClass]="'error-input small'"
+      [ngClass]="'error small label-box'"
     >
       Password do not match</label
     >
