@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { switchMap } from 'rxjs';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 import { Card } from 'src/app/shared/model/card.model';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { HeroesService } from 'src/app/shared/services/heroes.service';
 import { environment } from 'src/environments/environment';
@@ -16,9 +17,8 @@ export class UserComponent implements OnInit {
   public boundMainDialog = this.openUserDialog.bind(this);
   public boundDialogTrainButtonFn = this.dialogTrainButtonFn.bind(this);
 
-  constructor(
+  constructor(private alertService: AlertService,
     private heroesService: HeroesService,
-    private authService: AuthService,
     private dialog: MatDialog
   ) {}
 
@@ -40,5 +40,7 @@ export class UserComponent implements OnInit {
       environment.minPowerUpgrade;
     card.power = Math.floor(card.power * powerMultiplier);
     this.heroesService.putCard(card).subscribe();
+    this.alertService.notify("Trained " + card.name + "!");
+
   }
 }
