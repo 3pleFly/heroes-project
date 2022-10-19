@@ -12,6 +12,7 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json');
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
   private _isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
@@ -69,21 +70,7 @@ export class AuthService {
     this._isLoggedIn$.next(false);
     localStorage.removeItem('token');
     localStorage.removeItem('USER_DATA');
-    this.router.navigate(['/main/heroes']);
-  }
-
-  getToken(): string | null {
-    return localStorage.getItem('token');
-  }
-
-  getUserData(): User {
-    const userData = localStorage.getItem('USER_DATA');
-    if (userData !== null) {
-      const userJson = JSON.parse(userData);
-      const user = userJson as User;
-      return user;
-    }
-    throw new Error('User ID is null.');
+    this.router.navigate(['/auth']);
   }
 
   setSession() {
@@ -101,4 +88,18 @@ export class AuthService {
       this._isLoggedIn$.next(false);
     }
   }
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  getUserData(): User {
+    const userData = localStorage.getItem('USER_DATA');
+    if (userData !== null) {
+      const userJson = JSON.parse(userData);
+      const user = userJson as User;
+      return user;
+    }
+    throw new Error('User ID is null.');
+  }
+
 }

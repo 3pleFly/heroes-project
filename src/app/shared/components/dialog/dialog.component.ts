@@ -24,13 +24,13 @@ export class DialogComponent implements OnInit, OnDestroy {
     this.trainFn = this.data.trainFn;
     this.addHeroFn = this.data.addHeroFn;
     this.errorMessageStreamSubscription =
-      this.alertService.errorStream.subscribe((message) => {        
+      this.alertService.errorStream.subscribe((message) => {
         this.uiErrorMessage = message;
       });
   }
 
   ngOnDestroy(): void {
-    this.errorMessageStreamSubscription.unsubscribe();
+    this.errorMessageStreamSubscription.unsubscribe();    
   }
 
   train(): void {

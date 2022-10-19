@@ -1,18 +1,15 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { Card } from '../model/card.model';
 import UserCardsResponse from '../model/userCardsResponse.model';
-
-const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 @Injectable({
   providedIn: 'root',
 })
 
-//this service is singleton, and has a subscription, could this cause a memory leak?
-// When is it preferable not to make the service a singleton, how do you do that?
+
 export class HeroesService implements OnDestroy {
   private _allCards$: BehaviorSubject<Card[] | null> = new BehaviorSubject<
     Card[] | null

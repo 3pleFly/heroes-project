@@ -43,7 +43,6 @@ export class UserComponent implements OnInit {
 
     if (card.trainCount < 5) {
       card.power = Math.floor(card.power * powerMultiplier);
-
       if (card.trainCount === 4) {
         const nextDate = new Date();
         nextDate.setDate(nextDate.getDate() + 1);

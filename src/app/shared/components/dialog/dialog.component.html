@@ -1,12 +1,12 @@
 <h3>{{ data.card.name }}</h3>
-<p [ngClass]="'notification error'">
+<p [ngClass]="'error'">
   {{ uiErrorMessage }}
 </p>
 <img src="{{ data.card.imgSrc }}" alt="hero-portrait" />
 <p>Power: {{ data.card.power }}</p>
 <p *ngIf="this.trainFn" >Trained Today: {{ data.card.trainCount }} times</p>
 <p *ngIf="this.trainFn && data.card.trainCount > 4" >Can't train {{ data.card.name }} today anymore.</p>
-<p *ngIf="this.trainFn && data.card.trainCount > 4" >Next time you can train: {{ data.card.nextTrainDate | date }}</p>
+<p *ngIf="this.trainFn && data.card.trainCount > 4" >Try again at: {{ data.card.nextTrainDate | date }}.</p>
 <div class="actions">
   <button ngClass="btn small primary-color bold" mat-dialog-close>Close</button>
   <button ngClass="btn small secondary-color bold" *ngIf="this.addHeroFn" (click)="addHero()">Add</button>

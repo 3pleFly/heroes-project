@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
 import { Card } from 'src/app/shared/model/card.model';
 import { AlertService } from 'src/app/shared/services/alert.service';
@@ -11,10 +12,11 @@ import { HeroesService } from 'src/app/shared/services/heroes.service';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
   allCards: Card[] | null = null;
   public boundOpenDialog = this.openHomeDialog.bind(this);
   public boundDialogAddHeroFn = this.dialogAddHeroFn.bind(this);
+  allCards$Subscription!: Subscription;
 
   constructor(
     private heroesService: HeroesService,
@@ -23,8 +25,12 @@ export class MainPageComponent implements OnInit {
     private alertService: AlertService
   ) {}
 
-  ngOnInit(): void {
-    this.heroesService.allCards$.subscribe((allCards) => {
+  ngOnDestroy(): void {
+    this.allCards$Subscription.unsubscribe();
+  }
+
+  ngOnInit(): void {    
+    this.allCards$Subscription = this.heroesService.allCards$.subscribe((allCards) => {
       this.allCards = allCards;
     });
   }
@@ -54,9 +60,7 @@ export class MainPageComponent implements OnInit {
         .getCurrentSession()
         .allCards?.find((card) => card.id === cardId);
       if (newCard) {
-        userCards.push(newCard);
-        const userCardIds: number[] = userCards.map((card) => card.id);
-
+        userCards.push(structuredClone(newCard));        
         this.heroesService.updateUserCards(userCards);
         this.heroesService.putUserCards(userId).subscribe();
         this.alertService.notify('New hero added');

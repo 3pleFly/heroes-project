@@ -18,7 +18,7 @@ export class HeroesLayoutComponent implements OnInit {
   ngOnInit(): void {    
   }
 
-  openDialog(card: Card) {
+  openDialog(card: Card) {    
     this.dialogFunction(card);
   }
 

@@ -29,6 +29,11 @@
       "email": "hello@gmail.com",
       "password": "$2a$10$a52vIl3VFfMGt.n5fId1I.of3TYzR3A6SwRzp5OYC/T7pBKic36O.",
       "id": 6
+    },
+    {
+      "email": "gal@gmail.com",
+      "password": "$2a$10$kqODnu.yEwxcUFYzuJ6yquKIzKseGqKlJEIhNuFx4fwpjBQoQCf1q",
+      "id": 7
     }
   ],
   "cards": [
@@ -81,7 +86,7 @@
       "ability": "Attacker",
       "imgSrc": "https://images.pexels.com/photos/2854693/pexels-photo-2854693.jpeg?auto=compress&cs=tinysrgb&w=600",
       "name": "Spiderman",
-      "power": 253,
+      "power": 175,
       "startingPower": 175,
       "trainStartDate": "2090-11-03T10:32:18Z",
       "nextTrainDate": "2090-11-03T10:32:18Z",
@@ -142,31 +147,24 @@
       "cards": []
     },
     {
+      "cards": [],
+      "id": 6
+    },
+    {
       "cards": [
         {
-          "id": 1,
+          "id": 3,
           "ability": "Attacker",
-          "imgSrc": "https://images.pexels.com/photos/4048093/pexels-photo-4048093.jpeg?auto=compress&cs=tinysrgb&w=1600",
-          "name": "Groot",
-          "power": 139,
-          "startingPower": 115,
-          "trainStartDate": "2090-11-03T10:32:18Z",
-          "nextTrainDate": "2022-10-19T13:49:05.534Z",
-          "trainCount": 5
-        },
-        {
-          "id": 2,
-          "ability": "Attacker",
-          "imgSrc": "https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&w=600",
-          "name": "Black super man",
-          "power": 175,
+          "imgSrc": "https://images.pexels.com/photos/11355572/pexels-photo-11355572.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "name": "PeasBoy",
+          "power": 209,
           "startingPower": 175,
           "trainStartDate": "2090-11-03T10:32:18Z",
-          "nextTrainDate": "2022-10-19T13:45:08.737Z",
-          "trainCount": 2
+          "nextTrainDate": "2022-10-20T06:29:13.284Z",
+          "trainCount": 5
         }
       ],
-      "id": 6
+      "id": 7
     }
   ]
 }

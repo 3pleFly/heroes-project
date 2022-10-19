@@ -1,4 +1,3 @@
 <h3>{{ card.name }}</h3>
 <img src="{{ card.imgSrc }}" alt="hero-portrait" />
-<p>{{ this.powerOrStartingPower ? card.power : card.startingPower }}</p>
-<p>{{card.trainStartDate | date}}</p>
+<p> Power: {{ this.powerOrStartingPower ? card.power : card.startingPower }}</p>
